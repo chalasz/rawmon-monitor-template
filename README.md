@@ -1,6 +1,6 @@
 # RawMon Monitor Template — Cloudflare Worker
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/rawops/rawmon-monitor-template)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/chalasz/rawmon-monitor-template)
 
 A Cloudflare Worker that monitors HTTP endpoints every minute and sends push alerts to [RawMon](https://rawops.dev) on status changes.
 
@@ -33,7 +33,7 @@ A Cloudflare Worker that monitors HTTP endpoints every minute and sends push ale
 
 ```bash
 # Clone
-git clone https://github.com/rawops/rawmon-monitor-template.git
+git clone https://github.com/chalasz/rawmon-monitor-template.git
 cd rawmon-monitor-template
 
 # Create KV namespace
