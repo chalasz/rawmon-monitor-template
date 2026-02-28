@@ -1,0 +1,19 @@
+name = "rawmon-monitor"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[triggers]
+crons = ["* * * * *"]  # every minute
+
+[[kv_namespaces]]
+binding = "MONITOR_STATE"
+# After deploying, create a KV namespace and paste the ID here:
+#   wrangler kv namespace create MONITOR_STATE
+id = ""
+
+[vars]
+# Your RawMon webhook URL (from app > Scriptable > Setup)
+WEBHOOK_URL = ""
+# JSON array of endpoints to monitor
+# Example: [{"name":"api","url":"https://api.example.com/health"},{"name":"web","url":"https://example.com"}]
+ENDPOINTS = "[]"
