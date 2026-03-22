@@ -59,7 +59,14 @@ export default {
       const prevStatus = (await env.MONITOR_STATE.get(ep.name)) || "up";
       if (status !== prevStatus) {
         await env.MONITOR_STATE.put(ep.name, status);
-        await fetch(WEBHOOK_URL, {
+
+        // Build webhook URL with source=script so the relay uses the correct parser
+        const url = new URL(WEBHOOK_URL);
+        if (!url.searchParams.has("source")) {
+          url.searchParams.set("source", "script");
+        }
+
+        await fetch(url.toString(), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ monitor: ep.name, status, message, metrics }),
